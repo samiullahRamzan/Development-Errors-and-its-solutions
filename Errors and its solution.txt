@@ -1,0 +1,45 @@
+Soution:  Failed to connect with ip /192.168.10.2:8081
+
+Basically we set ip address of development environment using this command :  Run as administrator
+ cmd to change Ip:
+-> ipconfig
+-> setx /M REACT_NATIVE_PACKAGER_HOSTNAME {Ip wireless address}
+
+due dynamic changing of ip address previous ipaddress has set on vs code.
+
+=> kill-server running using 'npx expo start'
+=> close vs code and again run vs code .
+
+you'll see ip address will be successfully changed..
+
+
+---------------------------------------------------------
+
+-------Error--------------------
+TypeError: dependencies is not iterable
+    at resolveDependencies (F:\piblub-app\node_modules\metro\src\DeltaBundler\buildSubgraph.js:15:21)
+    at visit (F:\piblub-app\node_modules\metro\src\DeltaBundler\buildSubgraph.js:83:30)
+    at async Promise.all (index 0)
+    at visit (F:\piblub-app\node_modules\metro\src\DeltaBundler\buildSubgraph.js:92:5)
+    at async Promise.all (index 0)
+    at visit (F:\piblub-app\node_modules\metro\src\DeltaBundler\buildSubgraph.js:92:5)
+    at async Promise.all (index 1)
+    at visit (F:\piblub-app\node_modules\metro\src\DeltaBundler\buildSubgraph.js:92:5)
+    at async Promise.all (index 1)
+    at visit (F:\piblub-app\node_modules\metro\src\DeltaBundler\buildSubgraph.js:92:5)
+
+----------------------------------
+
+Solution: dependency is not iterable.
+
+remove file in temp folder ..
+path of temp folder: C:/users/gujjar/appData/local/temp
+
+OR
+
+window + R	
+and type => %temp%
+
+and delete files in it .
+
+=> kill-server and again run npx expo start.
